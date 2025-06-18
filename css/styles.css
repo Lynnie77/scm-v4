@@ -58,7 +58,8 @@
 /*Scrollbar STYLING END*/
 
 body {
-  height: 100vh;
+  /*height: 100vh;*/
+  height: 100%;
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.4px;
   margin: 0;
@@ -102,8 +103,7 @@ h3 {
   height: 100%;
   grid-template-columns: 1fr;
  /* grid-template-rows: 50px 5px 420px 50px 300px; */
-  grid-template-rows: repeat(5(auto-fit, minmax(50px, 420px)));
-  
+  grid-template-rows: 50px auto 420px 50px 250px;
   justify-items: center;
   align-items: center;
 }
@@ -590,8 +590,9 @@ figcaption {
     margin: 0 auto;
     margin-left: 0;
     grid-template-columns: 200px;
-    grid-template-rows: 30px 25px 25px 20px 25px;
+    grid-template-rows: 20px 20px 20px 20px 20px;
     column-gap: 5px;  
+    
 }
 .scm_contact_info_grid p{ 
   font-size: 12px;
@@ -742,6 +743,7 @@ footer{
 
 .footer li {
   display: flex;
+  height: 20px;
   width: 100px;
   margin: 0 1px; /* Horizontal spacing between items */
   justify-self: right;
@@ -766,6 +768,13 @@ main, section, .container, .wrapper {
 }
 /* Mobile styles */
 @media (max-width: 767px) {
+ .main_wrapper{
+  display: grid; /* You need this */
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+     grid-template-rows: 50px 20px auto 420px  auto;
+} 
 #carousel {
   display: none !important;
 }
@@ -779,7 +788,7 @@ main, section, .container, .wrapper {
     padding: 1rem;
     width: 100%;
     box-sizing: border-box;
-    grid-row: 3; /**/
+   /* grid-row: 3; */
     justify-items: center;
 }
 
@@ -881,12 +890,6 @@ main, section, .container, .wrapper {
 }
 /*SIDEBAR END*/
 
-@media (max-width: 566px){
-/*REmoved Text From Bottom NavBar*/
-.text{
-  display: none !important;
- }
-}
 
 @media (max-width: 600px) {
   .scene {
@@ -905,6 +908,13 @@ main, section, .container, .wrapper {
   .card h3 {
     font-size: 12px;
   }
+}
+
+@media (max-width: 566px){
+/*REmoved Text From Bottom NavBar*/
+.text{
+  display: none !important;
+ }
 }
 
 @media (max-width: 480px) {
@@ -958,22 +968,30 @@ main, section, .container, .wrapper {
   z-index: 1000;
   margin: 0 auto;
 }
+.sidebar-link {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  font-size: 6px;
+  text-align: center;
+  gap: 0;
+  color: var(--accent-color);
+}
+
+.sidebar-link .icon {
+  font-size: 16px;
+}
 }
 @media (max-width: 348px) {
 #logo{
   display: none;
 }
-header.navbar{
-  padding-right: 5px;
-}
+
 }
 @media (max-width: 333px) {
 #logo{
   font-size: 10px;
 
 }  
-header.navbar{
-  padding-left: 2px;
-  padding-right: 2px;
-}
 }

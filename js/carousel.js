@@ -117,7 +117,7 @@ cards.forEach((card) => {
 });
 
 // === mobile-cards-wrapper POPUP SUPPORT ===
-document.querySelectorAll(".mobile-cards-wrapper .card").forEach((card) => {
+document.querySelectorAll(".mobile-cards-wrapper .mobile-card").forEach((card) => {
   card.addEventListener("click", (event) => {
     const cardId = card.dataset.id;
     showPopup(cardId, event); // Pass the event to stopPropagation
@@ -141,3 +141,4 @@ initCarousel();
 window.addEventListener("resize", () => {
   initCarousel();
 });
+
