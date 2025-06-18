@@ -920,7 +920,7 @@ h1{
 }
 @media screen and (max-width: 366px) {
 span.end{
-	font-size: 24px;
+	display: none;
 }
 }
 /*****Media Queries***340px***/
@@ -934,7 +934,7 @@ body{
 }
 
 section{
-	padding: 0 0 10px 0; /***Space inbetween Main Grid Container - Nav - Grid Space***/
+	padding: 0 0 10px 0; /***Space in between Main Grid Container - Nav - Grid Space***/
  } 	
 
 /****Info For Items Name Price Buy Now Button***START***/
