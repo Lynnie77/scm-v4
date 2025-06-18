@@ -545,7 +545,7 @@ figcaption {
     text-shadow: 1px 1px 1px var(--pillar-text-shadow);
 }
 .pillars_card_text_ul p{
-    font-size: 15px;
+    font-size: 14px;
     margin-top: 2px;
     text-shadow: 1px 1px 1px var(--pillar-text-shadow);
 }

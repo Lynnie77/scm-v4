@@ -14,6 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     const mailtoLink = `mailto:sacredconnectionsministry@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    window.location.href = mailtoLink;
+    // Create a temporary hidden anchor
+    const tempLink = document.createElement('a');
+    tempLink.href = mailtoLink;
+    tempLink.style.display = 'none';
+    document.body.appendChild(tempLink);
+
+    // Click the link
+    tempLink.click();
+
+    // Remove the link
+    document.body.removeChild(tempLink);
   });
 });
