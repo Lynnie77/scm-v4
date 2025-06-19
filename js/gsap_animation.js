@@ -1,3 +1,5 @@
+
+// TEXT ANIMATION START
 // Select the element you want the typewriter effect on
 const textElement = document.querySelector("#logo");
 
@@ -44,3 +46,4 @@ if (textElement) {
 } else {
   console.error("Element with ID 'logo' not found.");
 }
+// TEXT ANIMATION END
