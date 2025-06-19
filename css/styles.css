@@ -985,13 +985,23 @@ main, section, .container, .wrapper {
 }
 @media (max-width: 348px) {
 #logo{
-  display: none;
+  font-size: 14px;
 }
 
 }
 @media (max-width: 333px) {
 #logo{
   font-size: 10px;
-
 }  
+.navbar {
+  padding: 0rem 1rem;
 }
+}
+
+@media (max-width: 286px) {
+#logo{
+  display: none;
+}
+}
+
+/*Seems To Go To 194px on mobile view*/
