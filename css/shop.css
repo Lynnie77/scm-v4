@@ -836,7 +836,12 @@ h4{
 	grid-gap: 10%;
 	}
 }
-
+@media (max-width: 566px){
+/*REmoved Text From Bottom NavBar*/
+.text{
+  display: none !important;
+ }
+}
 /*****Media Queries***540px***/
 @media screen and (max-width: 540px) {
 .nav{
