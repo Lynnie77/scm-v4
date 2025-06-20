@@ -150,6 +150,37 @@ footer {
     color: #aaa;
 }
 
+/*Item Bullet Points styling START*/
+.item-bullet_points {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+    font-family: 18thCentury, Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 18px;
+    line-height: 1.6;
+    padding-left: 16px;
+}
+
+.item-bullet_points li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 24px;
+}
+
+.item-bullet_points li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color, #3aad09);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+}
+/*Item Bullet Points styling END*/
+
 
 @media screen and (max-width: 500px){
 #page_title{
