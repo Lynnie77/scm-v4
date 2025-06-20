@@ -30,6 +30,7 @@ body {
     max-width: 1600px;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 0px;
     color: #ddd;
     text-align: center;
 }
@@ -37,7 +38,7 @@ body {
 .header {
     display: grid;
    /* grid-template-columns: auto 1fr auto; */
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto;
     align-items: center;
     background-color: var(--bgkd-dark);
     box-shadow: 0 0 10px black;
@@ -52,19 +53,22 @@ body {
 }
 .logo_grid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
 }
 #page_title {
-    font-size: 28px;
+    font-size: 22px;
+    
     text-shadow: 1px 1px 2px #7dabd2;
     margin-left: 10px;
 }
 
 .back-link {
+    width: 150px;
     color: #3aad09;
     text-decoration: none;
     font-size: 16px;
+    margin-left: auto;
 }
 
 .back-link:hover {
@@ -144,4 +148,29 @@ footer {
     margin-top: 40px;
     font-size: 14px;
     color: #aaa;
+}
+
+
+@media screen and (max-width: 500px){
+#page_title{
+    font-size: 14px;
+}    
+}
+
+@media screen and (max-width: 500px){
+#page_title{
+   display: none;
+}
+.logo_grid{
+    grid-template-columns: 1fr auto;
+}    
+.header {
+    align-items: center;
+    padding: 10px 5px;
+}
+.back-link {
+    width: 120px;
+    font-size: 14px;
+    margin-left: auto;
+}
 }
