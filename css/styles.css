@@ -343,24 +343,7 @@ header{
 }
 
 .popup-close {
-  background-color: #f007dc;
-  border: none;
-  font-size: 14px;
-  font-weight: 200;
-  padding: 3px 3px;
-  color: var(--text-3);
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: 8px;
-}
-
-.popup-close:hover {
-  background-color: #fa79ef;
-}
-.popup-close:active{
-  font-size: 13px;
-  text-shadow: 0 0 0 1px white;
-  color: greenyellow;
+  display: none;
 }
 
 /* about page */
@@ -773,6 +756,27 @@ main, section, .container, .wrapper {
 }
 /* Mobile styles */
 @media (max-width: 767px) {
+.popup-close {
+  display: flex;
+  background-color: #f007dc;
+  border: none;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 3px 3px;
+  color: var(--text-3);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.popup-close:hover {
+  background-color: #fa79ef;
+}
+.popup-close:active{
+  font-size: 13px;
+  text-shadow: 0 0 0 1px white;
+  color: greenyellow;
+}
+
  .main_wrapper{
   display: grid; /* You need this */
   min-height: 100%;

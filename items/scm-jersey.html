@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sacred Connections Ministry Jersey's</title>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/product.css" />
+    <!-----Thumbnail Image In Browser---Start---------->
+    <link rel="shortcut icon" type="image/png" href="../logo/scm_logo_high_res_og_img.png">
+    <!-----Thumbnail Image In Browser----Finish---------> 
+    <!-- GSAP Animation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo_grid">
+        <a id="header_logo" href="../index.html">
+            <img src="../logo/scm_logo_high_res_og_no_bkgd-01.svg" alt="Sacred Connections Ministry Logo" />
+        </a>
+        <h1 id="page_title">Sacred Connections Ministry Jersey's</h1>
+        <a class="back-link" href="../shop.html">← Back to Shop</a>
+    </div>
+    <nav class="nav">
+        
+    </nav>
+</header>
+
+<main class="product-container">
+
+    <div class="product-card">
+
+        <img src="../images/T-Shirt-Main.jpg" alt="Sacred Body Butter" class="product-image" />
+
+        <div class="product-info">
+            <h2 class="product-name">Sacred Connections Ministry Jersey's</h2>
+            <p class="product-description">
+                Elevate your wardrobe with this versatile, classic-fit shirt. Made from soft, breathable fabric, it offers all-day comfort while maintaining a sharp, polished look. Whether you’re dressing up for a meeting or going casual for the weekend, this shirt pairs effortlessly with jeans, chinos, or dress pants. Featuring a timeless button-down collar, adjustable cuffs, and a tailored silhouette, it’s designed to fit perfectly without feeling restrictive. Available in a variety of colors and sizes, this shirt is a must-have staple for any modern wardrobe.
+
+                Soft, breathable fabric
+                Timeless button-down collar
+                Adjustable cuffs for a customizable fit
+                Classic, versatile design
+                Available in multiple colors and sizes
+ 
+
+Care Instructions: Machine washable for easy care.
+            </p>
+            <p class="product-price">$40</p>
+
+            <a href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-12637" class="buy-button">
+                Donate & Receive Product
+            </a>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <a href="../index.html">Home</a> | 
+    <a href="../shop.html">Shop</a>
+</footer>
+
+<script>
+    // Animate elements on page load
+    gsap.from(".product-card", { duration: 1, opacity: 0, y: 50, ease: "power2.out" });
+    gsap.from(".product-image", { duration: 1.2, opacity: 0, scale: 0.8, ease: "power2.out", delay: 0.3 });
+    gsap.from(".product-info", { duration: 1.2, opacity: 0, y: 50, ease: "power2.out", delay: 0.5 });
+</script>
+
+</body>
+</html>
