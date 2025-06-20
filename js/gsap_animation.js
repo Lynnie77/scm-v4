@@ -1,5 +1,5 @@
 
-// TEXT ANIMATION START
+// TEXT ANIMATION START 
 // Select the element you want the typewriter effect on
 const textElement = document.querySelector("#logo");
 

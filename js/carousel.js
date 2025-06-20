@@ -142,3 +142,25 @@ window.addEventListener("resize", () => {
   initCarousel();
 });
 
+
+// ==== CLOSE POPUP BTN ====
+function closePopup() {
+  const popups = document.querySelectorAll('.popup');
+  popups.forEach(popup => {
+    popup.classList.remove('show');
+  });
+  isPopupOpen = false;
+  if (window.innerWidth >= 768) {
+    startRotation(); // Resume rotation on desktop
+  }
+}
+
+document.querySelectorAll('.popup .popup-close').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent the click from bubbling up
+    closePopup();
+  });
+});
+
+
+
