@@ -36,11 +36,9 @@ body{
 	text-align: center;
 	/*padding: 5px; */
 	padding-top: 0;
-}
-body{
 	max-width: 1600px;
-	margin: 0 auto;
 }
+
 /****Main Background Section Behind Content and Nav*****/
 /*
 section{
@@ -127,8 +125,6 @@ h3{
     margin-top: 1px;
 }
 /********Nav**Area**Finish*******************************/
-/*geoffstengel.com text in header*/
-
 .logo_grid{
 	display: grid;
 	height: 100%;
@@ -164,7 +160,15 @@ h3{
 /*Says something like Sacred Connections Ministry*/
 #page_title{
 	margin: 0;
-	margin-left: 10px;
+	margin-left: 17px;
+	color:var(--bkgd-color);
+	float: left;
+	font-weight: 100;
+    
+    font-family: monospace;
+    font-size: 20px;
+	white-space: nowrap;
+    position: relative; /* Make #logo a positioning context for the cursor */
 }
 
 .box{
@@ -559,7 +563,13 @@ footer{
   font-family: monospace;
   text-decoration: underline;
 }
-
+/*Styles The Typewriter Effect The Blinking '|' */
+.cursor {
+  display: inline-block;
+  position: absolute; /* Position cursor relative to #logo */
+  top: 0;
+  transition: left 0.1s ease; /* Smooth cursor movement */
+}
 
 @media screen and (max-width: 1275px){
 #logo{
@@ -783,12 +793,19 @@ img.logo {
 	grid-gap: 15%;
 	}
 }	
+/*****Media Queries***660px***/
+@media screen and (max-width: 660px) {
+.nav{
+	grid-gap: 10%;
+	}
+}
 /*****Media Queries***655px***/
 @media screen and (max-width: 655px) {
 h1{
 	font-size: 25px;
  }
 }
+
 
 /*****Media Queries***580px***/
 @media screen and (max-width: 580px) {
@@ -820,28 +837,13 @@ h4{
  }
 }
 
-
-/*****Media Queries***756px***/
-@media screen and (max-width: 427px) {
-.end{
-	font-size: 18px;
- }
-}
-
-
-
-/*****Media Queries***660px***/
-@media screen and (max-width: 660px) {
-.nav{
-	grid-gap: 10%;
-	}
-}
 @media (max-width: 566px){
 /*REmoved Text From Bottom NavBar*/
 .text{
   display: none !important;
  }
 }
+
 /*****Media Queries***540px***/
 @media screen and (max-width: 540px) {
 .nav{
@@ -878,7 +880,17 @@ header{
 	grid-gap: 8%;
 	}
 }
-
+/*****Media Queries***756px***/
+@media screen and (max-width: 427px) {
+.end{
+	font-size: 18px;
+ }
+#page_title{
+	display: flex;
+	float: center;
+	font-size: 16px;
+} 
+}
 /*****Media Queries***420px***/
 @media screen and (max-width: 420px) {
 .nav{
@@ -927,6 +939,9 @@ h1{
 span.end{
 	display: none;
 }
+#page_title{
+	font-size: 14px;
+} 
 }
 /*****Media Queries***340px***/
 @media screen and (max-width: 340px) {
@@ -977,6 +992,10 @@ h1{
 .container p{
 	font-size: 16px;
  }
+	
+#page_title{
+	display: none;
+}
 }
 
 /*****Media Queries***258px***/
