@@ -1,31 +1,52 @@
+// === Hamburger Menu Toggle ===
 document.getElementById("hamburger").addEventListener("click", () => {
-  document.getElementById("navLinks").classList.toggle("nav-active");
-  document.getElementById("hamburger").classList.toggle("active");
+  const navLinks = document.getElementById("navLinks");
+  const hamburger = document.getElementById("hamburger");
 
+  navLinks.classList.toggle("nav-active");   // toggle menu open/close
+  hamburger.classList.toggle("active");      // animate hamburger icon
+});
 
-//Nav Hamburger btn stop carousel on specific card START
-// Hook nav links to rotate the carousel to the correct card
+// === Nav Link Clicks Rotate Carousel OR Scroll Mobile ===
 document.querySelectorAll('.nav-links a').forEach((link) => {
   link.addEventListener('click', (e) => {
-    e.preventDefault(); // prevent default jump behavior
+    const href = link.getAttribute('href');
 
-    const targetId = link.getAttribute('href').replace('#', '');
-    const targetCard = document.getElementById(targetId);
+    // Only process internal links (like #card1)
+    if (href.startsWith('#')) {
+      e.preventDefault();
 
-    if (!targetCard) return;
+      const targetId = href.replace('#', '');
+      const isMobile = window.innerWidth < 768; // adjust for your mobile breakpoint
 
-    const index = Array.from(cards).indexOf(targetCard);
-    if (index !== -1) {
-      currentCardIndex = index;
-      setCardPositions();
-      stopRotation(); // optional: stop auto-rotation on click
+      if (isMobile) {
+        // Mobile: scroll to mobile-card
+        const targetCard = document.querySelector(`.mobile-card[data-id="${targetId}"]`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Highlight / pulse in case already in view
+          targetCard.classList.add('highlight');
+          setTimeout(() => {
+            targetCard.classList.remove('highlight');
+          }, 1200); // adjust duration
+        }
+      } else {
+        // Desktop: rotate carousel
+        const targetCard = document.getElementById(targetId);
+        if (targetCard) {
+          const index = Array.from(cards).indexOf(targetCard);
+          if (index !== -1) {
+            currentCardIndex = index;
+            setCardPositions();
+            stopRotation();
+          }
+        }
+      }
     }
 
-    // Optional: close hamburger menu after clicking (if you have that behavior)
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.remove('open'); // If you're toggling a class
+    // Always close hamburger after click
+    document.getElementById('navLinks').classList.remove('nav-active');
+    document.getElementById('hamburger').classList.remove('active');
   });
-});
-//Nav Hamburger btn stop carousel on specific card END
-
 });
