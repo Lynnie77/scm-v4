@@ -1,31 +1,37 @@
+// === Hamburger Menu Toggle ===
 document.getElementById("hamburger").addEventListener("click", () => {
-  document.getElementById("navLinks").classList.toggle("nav-active");
-  document.getElementById("hamburger").classList.toggle("active");
+  const navLinks = document.getElementById("navLinks");
+  const hamburger = document.getElementById("hamburger");
 
+  navLinks.classList.toggle("nav-active");   // toggle menu open/close
+  hamburger.classList.toggle("active");      // animate hamburger icon
+});
 
-//Nav Hamburger btn stop carousel on specific card START
-// Hook nav links to rotate the carousel to the correct card
+// === Nav Link Clicks Rotate Carousel + Close Menu ===
 document.querySelectorAll('.nav-links a').forEach((link) => {
   link.addEventListener('click', (e) => {
-    e.preventDefault(); // prevent default jump behavior
+    // If the link is NOT going to shop.html, rotate carousel
+    if (!link.href.includes('shop.html')) {
+      e.preventDefault(); // prevent jump to #id
 
-    const targetId = link.getAttribute('href').replace('#', '');
-    const targetCard = document.getElementById(targetId);
+      const targetId = link.getAttribute('href').replace('#', '');
+      const targetCard = document.getElementById(targetId);
 
-    if (!targetCard) return;
+      if (!targetCard) return;
 
-    const index = Array.from(cards).indexOf(targetCard);
-    if (index !== -1) {
-      currentCardIndex = index;
-      setCardPositions();
-      stopRotation(); // optional: stop auto-rotation on click
+      const index = Array.from(cards).indexOf(targetCard);
+      if (index !== -1) {
+        currentCardIndex = index;
+        setCardPositions();
+        stopRotation(); // optional: stop auto-rotation on click
+      }
     }
 
-    // Optional: close hamburger menu after clicking (if you have that behavior)
+    // Close hamburger menu after click
     const navLinks = document.getElementById('navLinks');
-    navLinks.classList.remove('open'); // If you're toggling a class
-  });
-});
-//Nav Hamburger btn stop carousel on specific card END
+    navLinks.classList.remove('nav-active');
 
+    const hamburger = document.getElementById('hamburger');
+    hamburger.classList.remove('active');
+  });
 });
