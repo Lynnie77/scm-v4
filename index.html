@@ -236,7 +236,7 @@
   <!--<h2>Contact</h2> -->
   <!--<h4 class="touch">Get in touch with us</h4> -->
   <!--contact form -->
-<form id="contact-form">
+<form id="contact-form" action="https://formsubmit.co/sacredconnectionsministry@gmail.com" method="POST">
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" required><br><br>
 
@@ -246,8 +246,15 @@
   <label for="message">Message:</label>
   <textarea id="message" name="message" required></textarea><br><br>
 
+  <!-- FormSubmit hidden options -->
+  <input type="hidden" name="_subject" value="New Contact Form Submission">
+  <input type="hidden" name="_template" value="box">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://lynnie77.github.io/scm-v4/"> <!-- Optional: redirect after submit -->
+
   <input type="submit" value="Send">
 </form>
+
   <div class="scm_contact_info_grid">
     <!--<h2>SCM</h2> -->
     <p>SCM</p>
@@ -312,7 +319,7 @@
 <script src="js/sidebar.js"></script>
 <script src="js/hamburger.js"></script>
 <script src="js/carousel.js"></script>
-<script src="js/contact_submit_btn.js"></script>
+<!--<script src="js/contact_submit_btn.js"></script> -->
 <!--<script src="js/main.js"></script> -->
 </body>
 </html>

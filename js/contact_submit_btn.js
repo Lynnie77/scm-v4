@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
+  const successMsg = document.getElementById("success-message");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -8,22 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    if (!name || !email || !message) return;
+    if (!name || !email || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
 
     const subject = "Contact Form Submission";
     const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     const mailtoLink = `mailto:sacredconnectionsministry@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // Create a temporary hidden anchor
-    const tempLink = document.createElement('a');
-    tempLink.href = mailtoLink;
-    tempLink.style.display = 'none';
-    document.body.appendChild(tempLink);
+    // Open mail client (not hidden)
+    window.location.href = mailtoLink;
 
-    // Click the link
-    tempLink.click();
+    form.reset(); // clear the form
 
-    // Remove the link
-    document.body.removeChild(tempLink);
+    // Show success message
+    if (successMsg) {
+      successMsg.style.display = "block";
+      setTimeout(() => successMsg.style.display = "none", 5000);
+    }
   });
 });
