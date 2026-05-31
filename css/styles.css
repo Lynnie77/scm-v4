@@ -190,15 +190,17 @@ header{
 .nav-links {
   display: none;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
   background-color: rgba(0, 0, 0, 0.95);
-  padding: 1rem;
+  padding: 2rem;
   border: 1px solid #0281e2;
   border-radius: 8px;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 65px;
   right: 2rem;
   z-index: 1050;
+  width: 260px;
+  min-height: auto;
   box-shadow: 0 0 10px #0281e2, 0 0 20px #0281e2;
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -229,13 +231,14 @@ header{
 /*SCENE IS A DIV HOLDING THE CAROUSEL DIV. SCENE IS THE BODY OR WORLD OF CAROUSEL*/
 .scene {
   perspective: 5200px;
-  width: 80%;
-  height: 400px;
+  width: 760px;
+  max-width: calc(100vw - 160px);
+  height: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .carousel {
