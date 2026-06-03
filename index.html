@@ -257,23 +257,25 @@
   <!--<h2>Contact</h2> -->
   <!--<h4 class="touch">Get in touch with us</h4> -->
   <!--contact form -->
-<form id="contact-form" action="https://formsubmit.co/sacredconnectionsministry@gmail.com" method="POST">
+<form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+  <input type="text" name="_gotcha" style="display:none">
+
   <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required><br><br>
+  <input type="text" id="name" name="name" required>
 
   <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required><br><br>
+  <input type="email" id="email" name="email" required>
 
   <label for="message">Message:</label>
-  <textarea id="message" name="message" required></textarea><br><br>
+  <textarea id="message" name="message" required></textarea>
 
-  <!-- FormSubmit hidden options -->
   <input type="hidden" name="_subject" value="New Contact Form Submission">
-  <input type="hidden" name="_template" value="box">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://lynnie77.github.io/scm-v4/"> <!-- Optional: redirect after submit -->
 
-  <input type="submit" value="Send">
+  <button type="submit">Send Message</button>
+
+  <p id="form-status"></p>
+
 </form>
 
   <div class="scm_contact_info_grid">
