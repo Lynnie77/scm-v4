@@ -5,14 +5,21 @@ const totalCards = cards.length;
 let rotationInterval = null;
 let isPopupOpen = false;
 
-// === RESPONSIVE SETTINGS ===
+// === RESPONSIVE SETTINGS START===
 function getResponsiveSettings() {
   const width = window.innerWidth;
   if (width <= 400) return { rotationStep: 45, radius: 160 }; // Very small
   if (width <= 600) return { rotationStep: 50, radius: 200 }; // Mobile
   if (width <= 768) return { rotationStep: 60, radius: 260 }; // Tablet
-  return { rotationStep: 72, radius: 350 }; // Desktop
+  //return { rotationStep: 60, radius: 350 }; // Desktop
+  const cardCount = document.querySelectorAll(".carousel .card").length;
+
+return {
+  rotationStep: 360 / cardCount,
+  radius: cardCount >= 6 ? 275 : 350,
+};
 }
+// === RESPONSIVE SETTINGS END===
 
 // === CARD TRANSFORMS ===
 function setCardPositions() {

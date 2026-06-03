@@ -3,8 +3,9 @@ document.getElementById("hamburger").addEventListener("click", () => {
   const navLinks = document.getElementById("navLinks");
   const hamburger = document.getElementById("hamburger");
 
-  navLinks.classList.toggle("nav-active");   // toggle menu open/close
-  hamburger.classList.toggle("active");      // animate hamburger icon
+  navLinks.classList.toggle("nav-active");
+  hamburger.classList.toggle("active");
+  document.body.classList.toggle("menu-open", navLinks.classList.contains("nav-active"));
 });
 
 // === Nav Link Clicks Rotate Carousel OR Scroll Mobile ===
@@ -46,7 +47,8 @@ document.querySelectorAll('.nav-links a').forEach((link) => {
     }
 
     // Always close hamburger after click
-    document.getElementById('navLinks').classList.remove('nav-active');
-    document.getElementById('hamburger').classList.remove('active');
+      document.getElementById("navLinks").classList.remove("nav-active");
+      document.getElementById("hamburger").classList.remove("active");
+      document.body.classList.remove("menu-open");
   });
 });
